@@ -21,7 +21,7 @@ run_analysis <- function() {
 	actual_data <- merge(combined_data_output, activity_labels, by.x = "V1", by.y = "V1")
 	
 	
-	means <- colMeans(meanandstd_data)
+	means_by_activity <- aggregate(actual_data[,2:67], by=list(Category=actual_data$V2), FUN=mean)
 	
-	write.table(means, file = "./tidy_dataset.txt", row.name = FALSE)
+	write.table(means_by_activity, file = "./tidy_dataset.txt", row.name = FALSE)
 }
