@@ -6,7 +6,7 @@ run_analysis <- function() {
 	test_data <- read.table(file="./UCI HAR Dataset/test/X_test.txt")
 	tcombined_data <- rbind(train_data, test_data)
 
-	combined_data <- setNames(data.frame(tcombined_data), tmp_features[,2])
+	combined_data <- setNames(data.frame(tcombined_data), features[,2])
 
 	train_output <- read.table(file="./UCI HAR Dataset/train/y_train.txt")
 	test_output <- read.table(file="./UCI HAR Dataset/test/y_test.txt")
